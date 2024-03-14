@@ -16,9 +16,13 @@ export default function QueryProcessor(query: string): string {
       "J"
     );
   };
-  if (query.toLowerCase().includes("What is 41 plus 81?")) {
-    return (
-      "122"
+  if (query.toLowerCase().includes("What is plus")) {
+    var qlist:string[] = query.split('');
+    var num1:number = Number(qlist[2]); 
+    var num2:number = Number(qlist[4]);
+    var result = (num1 + num2).toString();
+    return ( 
+      result
     );
   };
 
