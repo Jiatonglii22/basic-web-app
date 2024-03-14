@@ -16,6 +16,7 @@ export default function QueryProcessor(query: string):string {
       "J"
     );
   };
+
   if (query.toLowerCase().includes("plus")) {
     var qlist:string[] = query.split(' ');
     var num1:number = Number(qlist[2]); 
@@ -25,6 +26,17 @@ export default function QueryProcessor(query: string):string {
       result
     );
   };
+
+  if (query.toLowerCase().includes("minus")) {
+    var qlist:string[] = query.split(' ');
+    var num1:number = Number(qlist[2]); 
+    var num2:number = Number(qlist[4].slice(0, -1));
+    var result = (num1 - num2).toString();
+    return ( 
+      result
+    );
+  };
+
 
   if (query.toLowerCase().includes("multiplied")) {
     var qlist:string[] = query.split(' ');
@@ -71,9 +83,6 @@ export default function QueryProcessor(query: string):string {
       largest.toString()
     );
   };
-
-  //Which of the following numbers is the largest: 96, 88, 46?
-
 
   return "";
 }
