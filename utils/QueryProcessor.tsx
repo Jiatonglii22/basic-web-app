@@ -26,6 +26,17 @@ export default function QueryProcessor(query: string):string {
     );
   };
 
+  if (query.toLowerCase().includes("multiplied")) {
+    var qlist:string[] = query.split(' ');
+    var num1:number = Number(qlist[2]); 
+    var num2:number = Number(qlist[5].slice(0, -1));
+    var result = (num1 * num2).toString();
+    return ( 
+      result
+    );
+  };
+
+
   if (query.toLowerCase().includes("Which of the following numbers is the largest:")) {
     var qlist:string[] = query.split(' ');
     var num1:number = Number(qlist[9].slice(0, -1)); 
