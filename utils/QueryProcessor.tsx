@@ -16,7 +16,7 @@ export default function QueryProcessor(query: string): string {
       "J"
     );
   };
-  if (query.toLowerCase().includes("What is plus")) {
+  if (query.toLowerCase().includes("plus")) {
     var qlist:string[] = query.split('');
     var num1:number = Number(qlist[2]); 
     var num2:number = Number(qlist[4]);
