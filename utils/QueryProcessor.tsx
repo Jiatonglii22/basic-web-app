@@ -17,6 +17,18 @@ export default function QueryProcessor(query: string):string {
     );
   };
 
+  //What is 30 to the power of 78?
+  if (query.toLowerCase().includes("power of")) {
+    var qlist:string[] = query.split(' ');
+    var num1:number = Number(qlist[2]); 
+    var num2:number = Number(qlist[7].slice(0, -1));
+    var result = (num1 ** num2).toString();
+    return ( 
+      result
+    );
+  };
+
+
   //what is 4 plus 4?
   if (query.toLowerCase().includes("plus")) {
     var qlist:string[] = query.split(' ');
