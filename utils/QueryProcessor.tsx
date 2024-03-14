@@ -1,4 +1,4 @@
-export default function QueryProcessor(query: string): any {
+export default function QueryProcessor(query: string):string {
   if (query.toLowerCase().includes("shakespeare")) {
     return (
       "William Shakespeare (26 April 1564 - 23 April 1616) was an " +
@@ -17,7 +17,7 @@ export default function QueryProcessor(query: string): any {
     );
   };
   if (query.toLowerCase().includes("plus")) {
-    var qlist:string[] = query.split('');
+    var qlist:string[] = query.split(' ');
     var num1:number = Number(qlist[2]); 
     var num2:number = Number(qlist[4].slice(0, -1));
     var result = (num1 + num2).toString();
@@ -27,7 +27,7 @@ export default function QueryProcessor(query: string): any {
   };
 
   if (query.toLowerCase().includes("Which of the following numbers is the largest:")) {
-    var qlist:string[] = query.split('');
+    var qlist:string[] = query.split(' ');
     var num1:number = Number(qlist[9].slice(0, -1)); 
     var num2:number = Number(qlist[10].slice(0, -1));
     var num3:number = Number(qlist[11].slice(0, -1));
@@ -57,7 +57,7 @@ export default function QueryProcessor(query: string): any {
       }
     }
     return ( 
-      largest
+      largest.toString()
     );
   };
 
