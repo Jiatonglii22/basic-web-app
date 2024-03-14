@@ -17,10 +17,11 @@ export default function QueryProcessor(query: string):string {
     );
   };
 
+  //what is 4 plus 4?
   if (query.toLowerCase().includes("plus")) {
     var qlist:string[] = query.split(' ');
     var num1:number = Number(qlist[2]); 
-    var num2:number = Number(qlist[4]);
+    var num2:number = Number(qlist[4].slice(0, -1));
     var result = (num1 + num2).toString();
     return ( 
       result
