@@ -20,7 +20,7 @@ export default function QueryProcessor(query: string):string {
   if (query.toLowerCase().includes("plus")) {
     var qlist:string[] = query.split(' ');
     var num1:number = Number(qlist[2]); 
-    var num2:number = Number(qlist[4].slice(0, -1));
+    var num2:number = Number(qlist[4]);
     var result = (num1 + num2).toString();
     return ( 
       result
