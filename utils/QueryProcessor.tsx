@@ -19,12 +19,30 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("plus")) {
     var qlist:string[] = query.split('');
     var num1:number = Number(qlist[2]); 
-    var num2:number = Number(qlist[4]);
+    var num2:number = Number(qlist[4].slice(0,1));
     var result = (num1 + num2).toString();
     return ( 
       result
     );
   };
+
+  // if (query.toLowerCase().includes("Which of the following numbers is the largest:")) {
+  //   var qlist:string[] = query.split('');
+  //   var num1:number = Number(qlist[9].slice(0, -1)); 
+  //   var num2:number = Number(qlist[10].slice(0, -1));
+  //   var num3:number = Number(qlist[11].slice(0, -1));
+  //   var largest:number = num1;
+  //   if (num1 > num2) {
+  //     if (num1 > num3) {
+  //       largest = num1;
+  //     }
+  //   }
+  //   return ( 
+  //     result
+  //   );
+  // };
+
+  //Which of the following numbers is the largest: 96, 88, 46?
 
 
   return "";
